@@ -1,6 +1,6 @@
 Name:		texlive-ffcode
-Version:	65170
-Release:	2
+Version:	69383
+Release:	1
 Summary:	Fixed-font code blocks formatted nicely
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ffcode
