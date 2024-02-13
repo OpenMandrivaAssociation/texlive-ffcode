@@ -1,5 +1,5 @@
 Name:		texlive-ffcode
-Version:	69383
+Version:	69706
 Release:	1
 Summary:	Fixed-font code blocks formatted nicely
 Group:		Publishing
