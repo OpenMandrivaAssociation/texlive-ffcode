@@ -3,7 +3,7 @@ Version:	70740
 Release:	1
 Summary:	Fixed-font code blocks formatted nicely
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ffcode
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ffcode
 License:	mit
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ffcode.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ffcode.doc.r%{version}.tar.xz
