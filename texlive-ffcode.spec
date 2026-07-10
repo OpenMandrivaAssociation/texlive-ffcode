@@ -1,41 +1,28 @@
-Name:		texlive-ffcode
-Version:	70740
-Release:	1
+%global tl_name ffcode
+%global tl_revision 79167
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.12.1
+Release:	%{tl_revision}.1
 Summary:	Fixed-font code blocks formatted nicely
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ffcode
 License:	mit
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ffcode.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ffcode.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ffcode.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ffcode.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ffcode.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ffcode.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(listings)
+Requires:	texlive(pgfopts)
+Requires:	texlive(tcolorbox)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This LaTeX package helps you write source code in your academic
-papers and make it looks neat. It uses minted and tcolorbox,
-configuring them the right way, to ensure that code fragments
-and code blocks look nicer.
+This LaTeX package helps you write source code in your academic papers
+and make it looks neat. It uses listings and tcolorbox, configuring them
+the right way, to ensure that code fragments and code blocks look nicer.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/ffcode
-%{_texmfdistdir}/tex/latex/ffcode
-%doc %{_texmfdistdir}/doc/latex/ffcode
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
