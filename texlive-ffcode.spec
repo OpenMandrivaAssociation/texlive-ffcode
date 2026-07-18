@@ -1,9 +1,9 @@
 %global tl_name ffcode
-%global tl_revision 79167
+%global tl_revision 79645
 
 Name:		texlive-%{tl_name}
 Epoch:		1
-Version:	0.12.1
+Version:	0.13.0
 Release:	%{tl_revision}.1
 Summary:	Fixed-font code blocks formatted nicely
 Group:		Publishing
